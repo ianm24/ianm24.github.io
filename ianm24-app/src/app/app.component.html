@@ -1,40 +1,22 @@
 <header id="main-header">
-    <div class="container">
-      <h1>IanM24 Github Website</h1>
-    </div>    
-  </header>
-  <nav id="navbar">
-    <div class="container">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>    
-  </nav>
+  <app-header></app-header>   
+</header>
+<nav id="navbar">
+  <app-nav-bar></app-nav-bar>
+</nav>
 
-  <div class="container">
-    <section id="main">
-      <h1>Welcome</h1>
-      <p>The idea of this website is to act as a sort of blog for projects I work on. Hobby projects tend to be sporadic so new posts here will be also, but I will try to give a good understanding of the thought processes and challenges that I come across during such projects. I may gradually make posts for past projects but no guarantees.</p>
-      <h2>Recent</h2>
-      <ul id="list-of-blogs">
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
-      </ul>
-    </section>
-    <aside id="sidebar">
-      <ul id="favorite-blogs">
-        <li>test</li>
-      </ul>
-    </aside>
-  </div>
-  
-  <footer id="main-footer">
-    <p>Copyright &copy; 2020 Ian McDowell</p>
-  </footer>
+<div class="container">
+  <section id="main">
+    <h1>Welcome</h1>
+    <p>The idea of this website is to act as a sort of blog for projects I work on. Hobby projects tend to be sporadic so new posts here will be also, but I will try to give a good understanding of the thought processes and challenges that I come across during such projects. I may gradually make posts for past projects but no guarantees.</p>
+    <app-blog-list></app-blog-list>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>
+
+<footer id="footer">
+  <app-footer></app-footer>
+</footer>
 
 
 <router-outlet></router-outlet>
