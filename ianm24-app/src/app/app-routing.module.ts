@@ -4,13 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
-import { TestBlogComponent } from './blogs/test-blog/test-blog.component';
+import { RpgmdpProjectIntroComponent } from './blogs/RPG-MDP/rpgmdp-project-intro/rpgmdp-project-intro.component';
+import { RpgmdpDevlog1Component } from './blogs/RPG-MDP/rpgmdp-devlog1/rpgmdp-devlog1.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: '/home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
 	{path: 'about', component: AboutComponent},
-	{path: 'testBlog', component: TestBlogComponent}
+	{path: 'RPG-MDP', component: RpgmdpProjectIntroComponent},
+	{path: 'RPG-MDP/devlog1', component: RpgmdpDevlog1Component}
 ];
 
 @NgModule({

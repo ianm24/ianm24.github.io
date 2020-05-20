@@ -11,6 +11,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TestBlogComponent } from './blogs/test-blog/test-blog.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { RpgmdpDevlog1Component } from './blogs/RPG-MDP/rpgmdp-devlog1/rpgmdp-devlog1.component';
+import { RpgmdpProjectIntroComponent } from './blogs/RPG-MDP/rpgmdp-project-intro/rpgmdp-project-intro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AboutComponent } from './about/about.component';
     NavBarComponent,
     TestBlogComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    RpgmdpDevlog1Component,
+    RpgmdpProjectIntroComponent
   ],
   imports: [
     BrowserModule,

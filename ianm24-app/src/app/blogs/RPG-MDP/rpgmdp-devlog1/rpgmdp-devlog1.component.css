@@ -1,0 +1,10 @@
+div.navigation a{
+	display: flex;
+	justify-content: space-between;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
