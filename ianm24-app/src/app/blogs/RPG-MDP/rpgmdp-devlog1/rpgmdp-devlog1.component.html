@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>Making a basic battle simulator: RPG-MDP Devlog 1</h1>
-	<h4>Posted 20 May 2020 4:40PM EST</h4>
+	<h4>Posted 20 May 2020 5:00PM EST</h4>
 
 	<p>The first step in this project was making a basic battle simulator. To do this we made classes for entities (those participating in a battle), moves, effects, and the battle itself. It was important to split the parts up in the beginning to allow a better workflow throughout the project. Each entity has a name, a list of moves, and stats. We used a keyworded dictionary for the stats so that we can add more as we develop the simulator, and the current stats are max health, attack, defense, and critical hit chance. We made two subclasses of entity: CPU and Player. The difference between these is how they choose moves. The CPU would choose a move from its list using the random library. We gave the moves and effects attributes as would be in a Pokemon game.</p>
 	<img class="center" src="/assets/RPG-MDP/devlog1/moves-and-effects.PNG" alt="Moves and Effects Classes" width="50%" height="50%">
