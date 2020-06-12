@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RpgmdpDevlog1Component } from './blogs/RPG-MDP/rpgmdp-devlog1/rpgmdp-devlog1.component';
 import { RpgmdpProjectIntroComponent } from './blogs/RPG-MDP/rpgmdp-project-intro/rpgmdp-project-intro.component';
+import { SandwichkidProjectIntroComponent } from './blogs/SandwichKid/sandwichkid-project-intro/sandwichkid-project-intro.component';
+import { SandwichkidDevlog1Component } from './blogs/SandwichKid/sandwichkid-devlog1/sandwichkid-devlog1.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { RpgmdpProjectIntroComponent } from './blogs/RPG-MDP/rpgmdp-project-intr
     HomeComponent,
     AboutComponent,
     RpgmdpDevlog1Component,
-    RpgmdpProjectIntroComponent
+    RpgmdpProjectIntroComponent,
+    SandwichkidProjectIntroComponent,
+    SandwichkidDevlog1Component
   ],
   imports: [
     BrowserModule,

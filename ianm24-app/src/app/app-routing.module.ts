@@ -7,12 +7,15 @@ import { AboutComponent } from './about/about.component';
 import { RpgmdpProjectIntroComponent } from './blogs/RPG-MDP/rpgmdp-project-intro/rpgmdp-project-intro.component';
 import { RpgmdpDevlog1Component } from './blogs/RPG-MDP/rpgmdp-devlog1/rpgmdp-devlog1.component';
 
+import { SandwichkidProjectIntroComponent } from './blogs/SandwichKid/sandwichkid-project-intro/sandwichkid-project-intro.component';
+
 const routes: Routes = [
 	{path: '', redirectTo: '/home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
 	{path: 'about', component: AboutComponent},
 	{path: 'RPG-MDP', component: RpgmdpProjectIntroComponent},
-	{path: 'RPG-MDP/devlog1', component: RpgmdpDevlog1Component}
+	{path: 'RPG-MDP/devlog1', component: RpgmdpDevlog1Component},
+	{ path: 'SandwichKid', component: SandwichkidProjectIntroComponent}
 ];
 
 @NgModule({
