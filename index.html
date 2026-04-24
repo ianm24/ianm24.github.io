@@ -29,19 +29,47 @@
     });
   </script>
   <style>
+    body {
+      text-align: center;
+      max-width: 900px;
+      /* width: 60%; */
+      margin: auto;
+      color: #9dc3ff;
+      font-family: arial, sans-serif;
+      background-color: #171717;
+      font-size: larger;
+    }
+
+    p {
+      text-align: left;
+      padding: 10px;
+      border: solid #6982aa 5px;
+      border-radius: 10px;
+      background-color: black;
+    }
+
+    .text {
+      left: 50%;
+      position: relative;
+    }
+
     .one-vis {
+      margin-top: 50px;
+      margin-bottom: 100px;
       display: flex;
-      left: 37%;
+      left: 60%;
       position: relative;
     }
 
     .two-vis {
+      margin-bottom: 100px;
       display: flex;
       left: 25%;
       position: relative;
     }
 
     .three-vis {
+      margin-bottom: 100px;
       display: flex;
       left: 10%;
       position: relative;
@@ -49,13 +77,24 @@
   </style>
 </head>
 <body>
-  <h1>CSCE 567 Semester Project: How the Effects of Natural Disasters Has Changed Over the Years</h1>
-  <h2>By Ian McDowell</h2>
+  <h1 class="text">CSCE 567 Semester Project: The Costs of Natural Disasters Over the Years</h1>
+  <h2 class="text">By Ian McDowell</h2>
 
-  <p>
+  <p class="text">
     The following visualizations use natural disaster data from the <a href="https://public.emdat.be/data" target="_blank">Emergency Events Database (EM-DAT)</a>,
     <a href="https://www.kaggle.com/datasets/codebynadiia/gdp-1975-2025" target="_blank">a Kaggle yearly GDP dataset</a>, 
     and death counts from the <a href="https://population.un.org/wpp/downloads" target="_blank">UN World Population Prospects</a>.
+  </p>
+
+  <p class="text">
+    Through this project, I have sought to understand how natural disasters have changed over the past few decades, in particular storms, floods, droughts, and wildfires. 
+    These disasters were chosen because they appeared to be the most consistently recorded year to year (compared to things like earthquakes or extreme high/low temperatures). 
+    Due to the nature of the data, I have opted for using the locally weighted trendlines (LOWESS) to help smooth out some of the large jumps, and to give a more helpful trendline 
+    compared to traditional linear regression. <br><br>
+    To start off I took a look at the economic damages that natural disasters have caused. Looking at the median cost per natural disasters each year worldwide we see an interesting trend.
+    The cost looks to go down slowly from 1980 to 2000 before more steeply increasing through 2024. I believe the initial downward trend can be primarily explained by a few outliers earlier 
+    in the data. In-particular, when looking at the per-region cost, we see that Europe has particularly high years in 1980 and 1987-1999. Looking at the raw data, these years only have 1 or 2 
+    large storms in Europe, leading the median to be skewed high. Thus I believe it is reasonable to believe that the cost of natural disasters is overall increasing.
   </p>
 
   <div id="svis1" class="two-vis">
@@ -63,19 +102,73 @@
     <div id="svis1-2"></div>
   </div>
 
+  <p class="text">
+    I next took a look at the death toll these natural disasters bring. Worldwide, the median death toll per disaster looks to have decreased over the years. Taking a closer look at the per-region plot, 
+    we see a similar story (with an outlier in Africa in 2023).
+  </p>
+  
+
   <div id="svis2" class="two-vis">
     <div id="svis2-1"></div>
     <div id="svis2-2"></div>
   </div>
 
-  <div id="svis22" class="one-vis">
-    <div id="svis2-3"></div>
-  </div>
+  <p class="text">
+    With an increasing cost, but lowering death toll, it leads me to wonder which of the disaster types are responsible for a larger proportion of deaths. From the plot below, showing median deaths 
+    per natural disaster, separated by type, it looks as though when wildfires and droughts happen, they are much more deadly compared to floods and storms. That said, if we look at the plot 
+    to the right, showing the proportion of natural disaster deaths each year attributed to a given type, we see floods and storms dominate. On a yearly basis, those two types of disasters contribute 
+    to the vast majority of deaths.
+  </p>
 
   <div id="svis3" class="two-vis">
     <div id="svis3-1"></div>
     <div id="svis3-2"></div>
   </div>
+
+  <p class="text">
+    If the disasters with the lower per-disaster death toll are still making the majority of yearly deaths, that means we should look at how frequently each of the disasters is happening each year. 
+    From the chart below, not only do we see that floods and storms are much more frequent than droughts and wildfires, as we would expect from earlier graphs, but the number of natural disasters 
+    also seems to be increasing.
+  </p>
+
+  <div id="svis22" class="one-vis">
+    <div id="svis2-3"></div>
+  </div>  
+
+  <p class="text">
+    With decreasing deaths per disaster, but increasing quantity of them, I believe it is important to next check how the severity of each disaster has changed. In particular, I am measuring the 
+    median magnitude of each disaster (using the respective magnitude measure) type each year. The droughts and wildfires are a bit inconclusive due to their infrequent occurrences, but the storm 
+    and flood plots show some clear trends. The median storm is getting weaker while the median flood is getting stronger. These would lead me to believe that the deaths of the respective disaster 
+    types appear to be cancelling one another out, i.e. as the median storm causes less deaths over time, the median flood causes more deaths in the same period. It is also worth considering that 
+    our ability to prevent deaths from natural disasters (through safety training, evacuation, proper ahead-of-time warnings) is likely to improve as the years go on, which may contribute to the 
+    overall lower death rates.
+  </p>
+
+  <div id="svis5" class="two-vis">
+    <div id="svis5-1"></div>
+    <div id="svis5-2"></div>
+  </div>
+
+  <div id="svis52" class="two-vis">
+    <div id="svis5-3"></div>
+    <div id="svis5-4"></div>
+  </div>
+
+  <p class="text">
+    Now I think it is worth taking a step back and considering where around the globe these disasters are happening. For this choropleth, I counted the number of disasters in each country over 
+    the full timeframe (1980-2024). This map does look to line up well with global areas with frequent storms. Below, I have also included plots at every decade comparing the proportion of yearly 
+    deaths that these natural disasters cause to the proportion of the GDP that the monetary damage of these disasters costs.
+
+  </p>
+
+  <!-- <div class="one-vis">
+    <iframe 
+      src="choropleth.html"
+      width="900"
+      height="600"
+      style="border: none;">
+    </iframe>
+  </div>  -->
   
   <div id="svis4" class="three-vis">
     <div id="svis4-1"></div>
@@ -88,24 +181,18 @@
     <div id="svis4-5"></div>
   </div>
 
-  <div id="svis5" class="two-vis">
-    <div id="svis5-1"></div>
-    <div id="svis5-2"></div>
-  </div>
+  <p class="text">
+    I believe the main takeaways are as follows:<br><br>
 
-  <div id="svis52" class="two-vis">
-    <div id="svis5-3"></div>
-    <div id="svis5-4"></div>
-  </div>
-
-  <div class="one-vis">
-    <iframe 
-      src="choropleth.html"
-      width="900"
-      height="600"
-      style="border: none;">
-    </iframe>
-  </div> 
+    These natural disasters are costing more in damage per storm and occuring more frequently each year. The most frequent natural disasters and the ones responsible for most natural-disaster-related 
+    deaths each year are storms and flooding, however the deaths per disaster are generally trending downward. The countries most affected by these changes are those in areas that experience the most 
+    storms/flooding (like the U.S. and China).<br><br>
+    
+    While the death toll per disaster is trending downwards, the increase in frequency and monetary damages leads me to believe that on the whole storms and flooding are getting more severe over time. 
+    I did not have time to analyze the trends in number of people affected in general (displaced, homes lost, etc.), but I believe that would be a valuable next step in evaluating the increasing 
+    danger of storms. This increasing severity matches with what I have heard by those discussing the climate's effect on extreme weather events, but it is eye opening to analyze the data for myself 
+    and come to a similar conclusion.
+  </p>
   
 </body>
 </html>
